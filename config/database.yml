@@ -11,14 +11,14 @@ default: &default
 
 development:
   <<: *default
-  database: your_project_name_development
+  database: mash_up_club_development
 
 test:
   <<: *default
-  database: your_project_name_test
+  database: mash_up_club_test
 
 production:
   <<: *default
-  database: your_project_name_production
-  username: your_database_user
-  password: <%= ENV['YOUR_DATABASE_PASSWORD'] %>
+  database: mash_up_club_production
+  username: <%= ENV['DATABASE_USERNAME'] %>
+  password: <%= ENV['DATABASE_PASSWORD'] %>
