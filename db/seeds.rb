@@ -8,7 +8,7 @@
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
 
-require 'open-uri'
+# require 'open-uri'
 
 puts 'removing old data...'
 
@@ -62,3 +62,5 @@ puts "creating creations database..."
 creation_1 = Creation.create(
 
 )
+
+puts 'finished!'
