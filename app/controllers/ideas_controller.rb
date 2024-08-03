@@ -1,6 +1,5 @@
 class IdeasController < ApplicationController
   before_action :set_idea, only: %i[show edit update destroy]
-
   before_action :authenticate_user!, except: %i[index show]
 
   def index
@@ -38,7 +37,7 @@ class IdeasController < ApplicationController
   end
 
   private
-
+  
   def set_idea
     @idea = Idea.find(params[:id])
   end

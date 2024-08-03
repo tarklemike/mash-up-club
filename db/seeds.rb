@@ -8,15 +8,59 @@
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
 
-puts "Cleaning database..."
+# require 'open-uri'
+
+puts 'removing old data...'
+
 User.destroy_all
 
-puts "Creating restaurants..."
-dishoom = {name: "Dishoom", address: "7 Boundary St, London E2 7JE", rating: 5}
-pizza_east =  {name: "Pizza East", address: "56A Shoreditch High St, London E1 6PQ", rating: 4}
+puts 'creating users...'
+user_1 = User.create(
+  email: 'miketarkleman@gmail.com',
+  password: 'G0d$p33dU!',
+  username: 'henrychurches',
+  first_name: 'Mike',
+  last_name: 'Tarkleman',
+  image: ''
+)
 
-[dishoom, pizza_east].each do |attributes|
-  restaurant = Restaurant.create!(attributes)
-  puts "Created #{restaurant.name}"
-end
-puts "Finished!"
+user_2 = User.create(
+  email: 'tarklemike@outlook.com',
+  password: 'G0d$p33dU!',
+  username: 'tarklemike',
+  first_name: 'Mikke',
+  last_name: 'Takkleman',
+  image: ''
+)
+
+# user_2_image = URI.open("https://upload.wikimedia.org/wikipedia/en/a/a5/Donald_Duck_angry_transparent_background.png")
+# user_2.photo.attach(io: user_2_image, filename: 'donald.jpg', content_type: "image/jpeg")
+# user_2.save
+
+puts 'creating ideas database...'
+
+idea_1 = Idea.create(
+  description: 'Rhinestone Cowboy x Like A Virgin',
+  audio: '',
+  user_id: user_1
+)
+
+idea_2 = Idea.create(
+  description: 'Black Eyed Peas - shut up x Dolly Parton - 9 to 5',
+  audio: '',
+  user_id: user_1
+)
+
+idea_3 = Idea.create(
+  description: "Donna Summers - I Feel Love x Bon Jovi - Livin' On A Prayer",
+  audio: '',
+  user_id: user_2
+)
+
+puts "creating creations database..."
+
+creation_1 = Creation.create(
+
+)
+
+puts 'finished!'
